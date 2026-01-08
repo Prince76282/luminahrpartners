@@ -1608,7 +1608,7 @@ footer:before {
     transition: var(--transition);
 }
 .logo-image {
-    height: 48px;
+    height: 78px;
     width: auto;
     object-fit: contain;
 }
