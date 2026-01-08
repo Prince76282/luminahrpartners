@@ -585,6 +585,21 @@ header.scrolled {
     transform: scale(1.05);
 }
 
+.logo-icon {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--deep-purple));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    color: var(--gold-accent);
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    transition: var(--transition);
+}
 
 .logo:hover .logo-icon {
     transform: rotate(360deg);
@@ -1526,12 +1541,6 @@ footer:before {
 .footer-logo:hover {
     transform: scale(1.05);
 }
-.logo-image {
-    height: 48px;
-    width: auto;
-    object-fit: contain;
-}
-
 
 .footer-logo .logo-icon {
     width: 40px;
@@ -1543,33 +1552,6 @@ footer:before {
     display: flex;
     flex-direction: column;
 }
-.hero-pattern,
-.floating-shapes,
-.scroll-indicator {
-  pointer-events: none;
-}
-.hero-content {
-  position: relative;
-  z-index: 10;
-}
-/* FIX BUTTON CLICK ISSUE */
-.hero-pattern,
-.floating-shapes,
-.scroll-indicator {
-  pointer-events: none;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 10;
-}
-
-/* Prevent header overlap */
-#contact,
-#services {
-  scroll-margin-top: 90px;
-}
-
 
 .footer-logo .logo-primary {
     font-size: 1.3rem;
@@ -1593,6 +1575,15 @@ footer:before {
     margin-bottom: 10px;
     transition: var(--transition);
 }
+.hero-pattern,
+.floating-shapes,
+.scroll-indicator {
+  pointer-events: none;
+}
+.hero-content {
+  position: relative;
+  z-index: 10;
+}
 
 .footer-links li:hover {
     transform: translateX(5px);
@@ -1615,6 +1606,16 @@ footer:before {
     gap: 10px;
     margin-bottom: 15px;
     transition: var(--transition);
+}
+.logo-image {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+}
+.preloader-logo {
+    height: 80px;
+    width: auto;
+    margin-bottom: 10px;
 }
 
 .footer-contact-item:hover {
@@ -1836,4 +1837,37 @@ footer:before {
         flex-direction: column;
         gap: 10px;
     }
+}
+
+/* Ultra small screens (320px and below) */
+@media (max-width: 320px) {
+    body { font-size: 13px; }
+
+    .container { width: 100%; padding: 0 10px; }
+
+    .hero h1 { font-size: 1.25rem; line-height: 1.25; }
+    .hero p { font-size: 0.9rem; }
+
+    .hero-btns { gap: 10px; }
+    .hero-btns .btn { padding: 10px 12px; font-size: 0.9rem; width: 100%; max-width: 240px; }
+
+    nav ul li { margin-left: 12px; }
+
+    .logo-primary { font-size: 1.2rem; }
+
+    .section-title h2 { font-size: 1.25rem; }
+    .section-title p { font-size: 0.85rem; }
+
+    .services-grid, .clients-grid { grid-template-columns: 1fr; gap: 12px; }
+
+    .stats-grid { grid-template-columns: 1fr; }
+    .stat-number { font-size: 1.6rem; }
+
+    .floating-contact-btn { padding: 10px 12px; font-size: 0.85rem; }
+    .floating-contact-btn span { display: none; }
+
+    .back-to-top { width: 42px; height: 42px; bottom: 16px; right: 16px; }
+
+    .form-control { padding: 10px; font-size: 14px; }
+    button.btn { padding: 10px 14px; font-size: 0.95rem; }
 }

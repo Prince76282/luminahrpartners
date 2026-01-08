@@ -23,6 +23,23 @@ window.addEventListener("scroll", function () {
     backToTop.classList.remove("visible");
   }
 });
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    const id = this.getAttribute("href");
+    if (id === "#") return;
+
+    const target = document.querySelector(id);
+    if (!target) return;
+
+    e.preventDefault();
+
+    const headerHeight = document.getElementById("header").offsetHeight;
+    const y =
+      target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+    window.scrollTo({ top: y, behavior: "smooth" });
+  });
+});
 
 // Mobile menu toggle
 const mobileMenuBtn = document.getElementById("mobileMenuBtn");
@@ -332,24 +349,7 @@ window.addEventListener("scroll", function () {
   if (hero) {
     hero.style.backgroundPosition = `center ${rate}px`;
   }
-});document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    const id = this.getAttribute("href");
-    if (id === "#") return;
-
-    const target = document.querySelector(id);
-    if (!target) return;
-
-    e.preventDefault();
-
-    const headerHeight = document.getElementById("header").offsetHeight;
-    const y =
-      target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-
-    window.scrollTo({ top: y, behavior: "smooth" });
-  });
 });
-
 
 // Add ripple effect to buttons
 const buttons = document.querySelectorAll(
